@@ -28,4 +28,5 @@ username untuk aplikasi
 2. username = 10002
    password = admin
 
-
+![halaman utama](https://github.com/yadiabdillah/test_lygarment/blob/main/halaman_utama.png?raw=true)
+![halaman detail](https://github.com/yadiabdillah/test_lygarment/blob/main/halaman_detail.png?raw=true)
