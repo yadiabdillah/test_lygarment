@@ -37,6 +37,8 @@ class Sewing extends CI_Controller {
 		$code = $this->input->get('code');
 		$data['table_header'] = $this->Model_sewing->get_table_header($code);
 		$data['transaksi'] = $this->Model_sewing->get_detail_transaction($date,$code);
+		$data['code'] = $code;
+		$data['date'] = $date;
 		$this->load->view('dist/detail_sewing', $data);
 	}
 

@@ -33,7 +33,7 @@ class Model_sewing extends CI_Model {
 
         $select = "
         output.OperatorName AS operator,
-        output.DestinationCode AS destination,
+       CONCAT(output.DestinationCode,' ( ',dest.DestinationName,' )') AS destination,
         SUM(output.QtyOutput) AS total_qty,
         ";
         foreach($data_table_header as $key){
@@ -42,6 +42,7 @@ class Model_sewing extends CI_Model {
     $db->select($select);
     $db->from('LygSewingOutput AS output');
     $db->join('LygStyleSize AS size', 'output.StyleCode = size.StyleCode AND output.SizeName = size.SizeName');
+    $db->join('LygDestination AS dest', 'output.DestinationCode = dest.DestinationCode');
     $db->group_by('output.OperatorName');
     $db->group_by('output.DestinationCode');
     $db->where('output.TrnDate', $date);

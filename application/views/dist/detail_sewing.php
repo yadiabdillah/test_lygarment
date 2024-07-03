@@ -41,7 +41,10 @@ $this->load->view('dist/_partials/header');
        
               <div class="card">
                   <div class="card-header">
-                    <h4>Detail Transaction</h4>
+                    <h4><?php echo $code." #".$date; ?></h4>
+                  </div>
+                  <div class="card-header">
+                    <h4>Detail Transaction :</h4>
                   </div>
                   <div class="card-body">
                    <?php $count_rowspan = count($table_header); ?>
